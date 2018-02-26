@@ -53,4 +53,9 @@ EmailAddress NVARCHAR(50),
 Rating INTEGER,
 Comments NTEXT );
 ```
-
+-  Replace the CREATE TABLE statement with the following SELECT statement:
+```
+SELECT * FROM SalesLT.ProductReview;
+```
+- Click Run, and verify that the query succeeds but returns 0 rows.
+- Close the query editor without saving any changes
