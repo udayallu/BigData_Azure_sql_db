@@ -58,4 +58,31 @@ Comments NTEXT );
 SELECT * FROM SalesLT.ProductReview;
 ```
 - Click Run, and verify that the query succeeds but returns 0 rows.
-- Close the query editor without saving any changes
+- Close the query editor without saving any changes.
+
+## LOAD data from a file into the Azure
+1. A common task in a big data solution is to transfer data from one store to another.
+2. In this case, you will use the **Copy Data wizard** in the **Azure Data Factory** service to **load** the product review **data** from a **text file** in **Azure Storage** into the **table** you created in **Azure SQL Database**.
+### Steps
+1. In the Microsoft Azure portal, in the menu, click New. Then in the Data + Analytics menu, click Data Factory.
+2. In the New data factory blade, enter the following settings, and then click Create:
+- Name: Enter a unique name (and make a note of it!)
+- Subscription: Select your Azure subscription
+- Version: 1
+- Resource Group: Select the resource group you created previously
+- Location: Select any available region
+- Pin to dashboard: Unselected
+3. View Notifications to verify that deployment has started. Then wait for the data factory to be deployed (this can take a few minutes.)
+4. Click All Resources, and then click your **data factory**, and click the **Author & Monitor** tile to launch the Data Factory UI application. This opens a new tab in your browser.
+5. Now click on the **Copy Data**.
+6. On the **Properties page** of the Copy Data wizard, enter the following details and then click Next:
+- Task name: Load Reviews
+- Task description: Load review data into Azure SQL Database
+- Task cadence (or) Task schedule: Run once now
+- Expiration time: 3:00:00:00
+7. On the Source data store page, on the Connect to a **Data Store tab**, select **Azure Blob Storage**. Then click Next.
+8. On the Specify the **Azure Blob storage account** page, enter the following details and then click Next:
+- Connection name: blob-store
+- Account selection method: From Azure subscriptions
+- Azure subscription: Select your subscription
+- Storage account name: Select your storage account
