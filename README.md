@@ -26,7 +26,7 @@ In this exercise, you will provision a sample database in Azure SQL database, an
 - Location: Select any available region
 - Allow azure services to access server: Selected
 In the Azure portal, view Notifications to verify that deployment has started. Then wait for the SQL database to be deployed (this can take a few minutes.)
-
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/azure_sql1.png)
 ## Query a Table
 - A relational database contains tables, each of which contains data. 
 - Tables are organized into namespaces called schemas – in the case of the **AdventureWorksLT** sample database, most of the tables are defined within a schema named **SalesLT**.
@@ -34,10 +34,12 @@ In the Azure portal, view Notifications to verify that deployment has started. T
 ## Step-2
 1. Click All Resources, and then click the AdventureWorksLT database.
 2. On the AdventureWorksLT blade,In the toolbar for the **query editor**, click Login, and then log into your database using SQL Server authentication and entering the login name and password you specified when provisioning the Azure SQL Database server.
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/img2.png)
 3. In the query editor, enter the following Transact-SQL query to retrieve the contents of the SalesLT.Product table in the AdventureWorksLT database:
 ```
 SELECT * FROM SalesLT.Product;
 ```
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/img_3.png)
 ## Exercise 2: Loading Data into a Database
 In this exercise, you will create a table in the sample database you created previously, and then use Azure Data Factory to copy data from a file in Azure Storage into the new table.
 ### Create Table
@@ -53,6 +55,7 @@ EmailAddress NVARCHAR(50),
 Rating INTEGER,
 Comments NTEXT );
 ```
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/img4.png)
 -  Replace the CREATE TABLE statement with the following SELECT statement:
 ```
 SELECT * FROM SalesLT.ProductReview;
@@ -74,13 +77,17 @@ SELECT * FROM SalesLT.ProductReview;
 - Pin to dashboard: Unselected
 3. View Notifications to verify that deployment has started. Then wait for the data factory to be deployed (this can take a few minutes.)
 4. Click All Resources, and then click your **data factory**, and click the **Author & Monitor** tile to launch the Data Factory UI application. This opens a new tab in your browser.
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/img6.png)
 5. Now click on the **Copy Data**.
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/img7.png)
 6. On the **Properties page** of the Copy Data wizard, enter the following details and then click Next:
 - Task name: Load Reviews
 - Task description: Load review data into Azure SQL Database
 - Task cadence (or) Task schedule: Run once now
 - Expiration time: 3:00:00:00
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/img8.png)
 7. On the Source data store page, on the Connect to a **Data Store tab**, select **Azure Blob Storage**. Then click Next.
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/img9.png)
 8. On the Specify the **Azure Blob storage account** page, enter the following details and then click Next:
 - Connection name: blob-store
 - Account selection method: From Azure subscriptions
