@@ -93,3 +93,30 @@ SELECT * FROM SalesLT.ProductReview;
 - Account selection method: From Azure subscriptions
 - Azure subscription: Select your subscription
 - Storage account name: Select your storage account
+9. On the Choose the input file or folder page, double-click the bigdata blob container you created previously and the data folder, and select the reviews.txt file. Then click Choose, and click Next.
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/imgn1.png)
+10. On the File format settings page, wait a few seconds for the data to be read, and then verify the following details, ensuring that the rows of data in the Preview section match the table below, and click Next:
+- File format: text format
+- Column delimiter: Tab (\t)
+- Row delimiter: Carriage return and line feed (\r\n)
+- Skip line count: 0
+- Column names in first data row: Selected
+- Treat empty column value as null: Selected
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/imgn2.png)
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/imgn3.png)
+10. On the Destination data store page, on the Connect to a Data Store tab, select Azure SQL Database. Then click Next.
+11. On the Specify the Azure SQL database page, enter the following details and then click Next:
+- Connection name: sql-database
+- Server / database selection method: From Azure subscriptions
+- Azure subscription: Select your subscription
+- Server name: Select your Azure SQL server
+- Database name: AdventureWorksLT
+- User name: The server admin login name you specified when creating the database
+- Password: The password for your Azure SQL server admin login
+12. On the Table mapping page, in the Destination list, select [SalesLT].[ProductReview] and click Next.
+13. On the Schema mapping page, ensure that the following settings are selected, and click Next:
+![alt text](https://github.com/udayallu/BigData_Azure_sql_db/blob/master/Pics/imgn0.PNG)
+14. On the Performance settings page, expand Advanced settings to review the default values. Then click Next.
+15. On the Summary page, click Finish.
+16. On the Deploying page, wait for the deployment to complete.
+
